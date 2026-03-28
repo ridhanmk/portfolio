@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ridhan Rasheed MK - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Container */
+        .resume-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* Top Header */
+        .header {
+            background-color: #ac9f9e; /* Muted taupe/brown */
+            display: flex;
+            padding: 40px 50px;
+            align-items: center;
+        }
+
+        .header-left {
+            flex: 0 0 30%;
+        }
+
+        .profile-img-container {
+            width: 180px;
+            height: 220px;
+            background-color: #fff;
+            border-radius: 30px;
+            padding: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 22px;
+        }
+
+        .header-right {
+            flex: 1;
+            padding-left: 40px;
+        }
+
+        .header-right h1 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.2;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .header-right h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #222;
+        }
+
+        /* Main Content Grid */
+        .content {
+            display: flex;
+            flex: 1;
+        }
+
+        /* Left Column */
+        .left-col {
+            background-color: #dadbdc; /* Light grey */
+            width: 38%;
+            padding: 40px 30px;
+        }
+
+        .section-title-left {
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            color: #222;
+            text-transform: uppercase;
+        }
+
+        .profile-text {
+            font-size: 14px;
+            color: #444;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            font-weight: 500;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            font-size: 13px;
+            color: #444;
+            font-weight: 500;
+        }
+
+        .contact-item i {
+            margin-top: 4px;
+            margin-right: 15px;
+            font-size: 16px;
+            color: #333;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Right Column */
+        .right-col {
+            background-color: #ffffff;
+            width: 62%;
+            padding: 50px 40px;
+        }
+
+        .section-right {
+            margin-bottom: 40px;
+        }
+
+        .section-title-right {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            color: #222;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+        }
+
+        /* The chevron arrow matching the image */
+        .section-title-right::before {
+            content: "";
+            display: inline-block;
+            width: 0; 
+            height: 0; 
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 15px solid #ac9f9e; /* matching header color */
+            margin-right: 15px;
+        }
+
+        .resume-item {
+            margin-bottom: 25px;
+        }
+
+        .resume-item h3 {
+            font-size: 14px;
+            font-weight: 700;
+            color: #222;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .resume-item p {
+            font-size: 14px;
+            color: #555;
+            font-weight: 400;
+        }
+
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            font-size: 15px;
+            color: #444;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="resume-container">
+        <!-- Top Header -->
+        <header class="header">
+            <div class="header-left">
+                <div class="profile-img-container">
+                    <!-- Pointing to the main profile image -->
+                    <img src="profile.jpg" alt="Ridhan Rasheed">
+                </div>
+            </div>
+            <div class="header-right">
+                <h1>RIDHAN<br>RASHEED MK</h1>
+                <h2>Student</h2>
+            </div>
+        </header>
+
+        <!-- Main Grid -->
+        <div class="content">
+            <!-- Left Column -->
+            <div class="left-col">
+                <div class="section-left">
+                    <h3 class="section-title-left">PROFILE</h3>
+                    <p class="profile-text">
+                        Bachelor of Computer Application student. I consider my self a responsible and orderly person. I'm passionate about coding and tech trends. With a project on ATM mechanism in C, I'm exploring opportunities in tech.
+                    </p>
+                </div>
+                
+                <div class="section-left">
+                    <h3 class="section-title-left" style="margin-top: 30px;">CONTACT ME</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 8156991644</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>ridhanrasheedmke@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Nilambur,Malappuram,<br>676525,Kerala,India</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-col">
+                <div class="section-right">
+                    <h3 class="section-title-right">EDUCATION</h3>
+                    <div class="resume-item">
+                        <h3>CALICUT UNIVERSITY</h3>
+                        <p>Bachelor of Computer Application</p>
+                    </div>
+                    <div class="resume-item">
+                        <h3>DE PAUL DISAT COLLEGE</h3>
+                        <p>2024-2028</p>
+                    </div>
+                </div>
+
+                <div class="section-right">
+                    <h3 class="section-title-right">LANGUAGE</h3>
+                    <ul class="skills-list">
+                        <li>Native English.</li>
+                        <li>Advanced German.</li>
+                    </ul>
+                </div>
+
+                <div class="section-right">
+                    <h3 class="section-title-right">COMPUTER SKILLS</h3>
+                    <ul class="skills-list">
+                        <li>Python.</li>
+                        <li>C programming.</li>
+                        <li>Text processor.</li>
+                        <li>Spreadsheet.</li>
+                        <li>Slide presentation.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -107,24 +107,68 @@ document.addEventListener('DOMContentLoaded', () => {
 
     animatedElements.forEach(el => observer.observe(el));
 
-    /* --- Form Submission Prevention (Demo only) --- */
+    /* --- Form Submission Logic --- */
     const contactForm = document.querySelector('.contact-form');
-    if(contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
+    let submitted = false;
+    const hiddenIframe = document.getElementById('hidden_iframe');
+    const modal = document.getElementById('submission-modal');
+    const closeBtns = document.querySelectorAll('.close-modal, .close-btn');
+
+    if(contactForm && hiddenIframe) {
+        contactForm.addEventListener('submit', () => {
+            submitted = true;
             const btn = contactForm.querySelector('.submit-btn');
-            const originalText = btn.textContent;
-            
-            btn.textContent = 'Message Sent!';
-            btn.style.background = 'var(--accent)';
-            
-            // reset form
-            contactForm.reset();
-            
-            setTimeout(() => {
-                btn.textContent = originalText;
-                btn.style.background = '';
-            }, 3000);
+            btn.textContent = 'Sending...';
+        });
+
+        hiddenIframe.addEventListener('load', () => {
+            if(submitted) {
+                // Show modal
+                modal.classList.add('show');
+                
+                // Reset form and button
+                contactForm.reset();
+                submitted = false;
+                const btn = contactForm.querySelector('.submit-btn');
+                btn.textContent = 'Send Message';
+            }
+        });
+    }
+
+    if (modal) {
+        closeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                modal.classList.remove('show');
+            });
+        });
+
+        // Close when clicking outside of modal
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('show');
+            }
+        });
+    }
+
+    /* --- Resume Modal Logic --- */
+    const resumeModal = document.getElementById('resume-modal');
+    const viewResumeBtn = document.getElementById('view-resume-btn');
+    const closeResumeBtn = document.querySelector('.close-resume-modal');
+
+    if(viewResumeBtn && resumeModal) {
+        viewResumeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            resumeModal.classList.add('show');
+        });
+        
+        closeResumeBtn.addEventListener('click', () => {
+            resumeModal.classList.remove('show');
+        });
+        
+        window.addEventListener('click', (e) => {
+            if (e.target === resumeModal) {
+                resumeModal.classList.remove('show');
+            }
         });
     }
 });

@@ -45,6 +45,7 @@
                 </p>
                 <div class="hero-actions">
                     <a href="#projects" class="btn primary-btn">View My Work</a>
+                    <button id="view-resume-btn" class="btn secondary-btn">View Resume</button>
                     <a href="#contact" class="btn secondary-btn">Get In Touch</a>
                 </div>
             </div>
@@ -177,15 +178,16 @@
                 </div>
             </div>
             
-            <form class="contact-form fade-in-right">
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+            <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdRUaGazMwHTnwbQW8DIQrtdvpXc1dheJvXsvWVlyGIixeRVg/formResponse" method="POST" target="hidden_iframe" class="contact-form fade-in-right">
                 <div class="form-group">
-                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="text" name="entry.1561586751" id="name" placeholder="Your Name" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" id="email" placeholder="Your Email" required>
+                    <input type="email" name="entry.2065796489" id="email" placeholder="Your Email" required>
                 </div>
                 <div class="form-group">
-                    <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                    <textarea name="entry.1551059765" id="message" rows="5" placeholder="Your Message" required></textarea>
                 </div>
                 <button type="submit" class="btn primary-btn submit-btn">Send Message</button>
             </form>
@@ -198,6 +200,39 @@
             <p>&copy; 2026 Ridhan Rasheed MK. Built with passion.</p>
         </div>
     </footer>
+
+    <!-- Submission Popup Modal -->
+    <div id="submission-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Success!</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <i class="fas fa-check-circle success-icon"></i>
+                <p>Your message has been sent successfully. I will get back to you soon.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn primary-btn close-btn" type="button">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resume Modal -->
+    <div id="resume-modal" class="modal">
+        <div class="modal-content resume-modal-content">
+            <div class="modal-header">
+                <h3>My Resume</h3>
+                <span class="close-modal close-resume-modal">&times;</span>
+            </div>
+            <div class="modal-body" style="height: 70vh; padding: 0;">
+                <iframe src="assets/resume.html" class="resume-iframe" title="Ridhan Rasheed Resume"></iframe>
+                <div style="margin-top: 15px; padding-bottom: 10px;">
+                    <a href="assets/resume.html" target="_blank" class="btn primary-btn" style="padding: 8px 15px; font-size: 0.9rem;">Open Resume in New Tab</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
