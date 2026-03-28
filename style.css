@@ -136,13 +136,14 @@ section {
 }
 
 .logo {
-    font-size: 1.8rem;
-    font-weight: 800;
-    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
 }
 
-.logo span {
-    color: var(--primary-glow);
+.nav-logo {
+    height: 40px;
+    width: auto;
+    filter: invert(1);
 }
 
 .nav-links {
