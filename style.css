@@ -800,6 +800,11 @@ footer {
     height: 280px;
     border-radius: 50%;
     z-index: 1;
+    padding: 8px; /* Space for dashed outer ring */
+    border: 1px dashed rgba(255, 255, 255, 0.2); /* Premium professional outer orbit ring */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-profile-img {
@@ -807,25 +812,8 @@ footer {
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
-    position: relative;
-    z-index: 2;
-    border: 3px solid var(--glass-border);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-}
-
-.profile-glow-effect {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 104%;
-    height: 104%;
-    background: linear-gradient(45deg, var(--primary-glow), var(--accent));
-    z-index: 1;
-    border-radius: 50%;
-    filter: blur(15px);
-    opacity: 0.5;
-    animation: pulse 4s infinite alternate;
+    border: 2px solid var(--glass-border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 /* Animations & Utility */
