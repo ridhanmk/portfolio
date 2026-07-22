@@ -284,11 +284,16 @@ section {
     font-size: 1.2rem;
 }
 
-.glitch {
-    font-size: 4.5rem;
+.hero-name {
+    font-size: 3.8rem;
     font-weight: 800;
     margin-bottom: 0.5rem;
-    position: relative;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    background: linear-gradient(135deg, #ffffff 40%, #a5b4fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
 }
 
 .typing-container {
@@ -721,6 +726,18 @@ footer {
     justify-content: center;
 }
 
+.hero-sticky::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(11, 15, 25, 0.4) 0%, rgba(6, 9, 19, 0.85) 80%);
+    z-index: 2;
+    pointer-events: none;
+}
+
 #hero-canvas {
     position: absolute;
     top: 0;
@@ -777,92 +794,80 @@ footer {
 .hero-feature {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    left: 2rem;
-    width: 100%;
-    max-width: 600px;
+    left: 50%;
+    transform: translate(-50%, -46%);
+    width: 90%;
+    max-width: 800px;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.8s ease, visibility 0.8s ease, transform 0.8s ease;
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     pointer-events: auto;
+    text-align: center;
 }
 
 .hero-feature.active {
     opacity: 1;
     visibility: visible;
-    transform: translateY(-50%);
+    transform: translate(-50%, -50%);
 }
 
 .hero-feature.inactive-up {
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-100%);
+    transform: translate(-50%, -56%);
 }
 
 .hero-feature.inactive-down {
     opacity: 0;
     visibility: hidden;
-    transform: translateY(0%);
+    transform: translate(-50%, -44%);
 }
 
 .feature-title {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 800;
     margin-bottom: 1rem;
-    background: linear-gradient(90deg, var(--primary-glow), var(--secondary-glow));
+    background: linear-gradient(135deg, #38bdf8, #818cf8);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
 }
 
 .feature-desc {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     color: var(--text-muted);
     line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 /* Feature 1 Profile Image Styles */
 .hero-feature.feature-1 {
-    max-width: 950px;
-    width: calc(100% - 4rem);
-}
-
-.feature-1-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 4rem;
-    width: 100%;
-}
-
-.feature-1-text {
-    flex: 1.2;
+    max-width: 800px;
 }
 
 .feature-1-image {
-    flex: 0.8;
+    margin-bottom: 1.5rem;
     display: flex;
     justify-content: center;
 }
 
 .profile-image-wrapper {
     position: relative;
-    width: 280px;
-    height: 280px;
+    width: 170px;
+    height: 170px;
     border-radius: 50%;
-    z-index: 1;
-    border: 1px dashed rgba(255, 255, 255, 0.2); /* Premium professional outer orbit ring */
+    background: padding-box, linear-gradient(135deg, #38bdf8, #818cf8) border-box;
+    border: 4px solid transparent;
+    box-shadow: 0 10px 30px rgba(56, 189, 248, 0.2), 0 0 20px rgba(129, 140, 248, 0.1);
+    overflow: hidden;
 }
 
 .hero-profile-img {
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    width: calc(100% - 16px);
-    height: calc(100% - 16px);
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 50%;
-    border: 2px solid var(--glass-border);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 /* Animations & Utility */
