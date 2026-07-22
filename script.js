@@ -276,4 +276,82 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
+
+    /* --- Interactive Background Particles --- */
+    const bgCanvas = document.getElementById("bg-particles");
+    if (bgCanvas) {
+        const ctx = bgCanvas.getContext("2d");
+        let particles = [];
+        const particleCount = 60;
+
+        function resizeCanvas() {
+            bgCanvas.width = window.innerWidth;
+            bgCanvas.height = window.innerHeight;
+        }
+        window.addEventListener("resize", resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * bgCanvas.width;
+                this.y = Math.random() * bgCanvas.height;
+                this.vx = (Math.random() - 0.5) * 0.4;
+                this.vy = (Math.random() - 0.5) * 0.4;
+                this.size = Math.random() * 2 + 1;
+                this.color = Math.random() > 0.5 ? "rgba(56, 189, 248, 0.2)" : "rgba(129, 140, 248, 0.2)";
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0 || this.x > bgCanvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > bgCanvas.height) this.vy *= -1;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
+            
+            // Subtle radial gradient background behind particles
+            let gradient = ctx.createRadialGradient(
+                bgCanvas.width / 2, bgCanvas.height / 2, 10,
+                bgCanvas.width / 2, bgCanvas.height / 2, Math.max(bgCanvas.width, bgCanvas.height)
+            );
+            gradient.addColorStop(0, '#0d1326');
+            gradient.addColorStop(1, '#05070e');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, bgCanvas.width, bgCanvas.height);
+
+            particles.forEach((p, index) => {
+                p.update();
+                p.draw();
+
+                for (let j = index + 1; j < particles.length; j++) {
+                    const p2 = particles[j];
+                    const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+                    if (dist < 120) {
+                        const alpha = (1 - dist / 120) * 0.12;
+                        ctx.strokeStyle = `rgba(129, 140, 248, ${alpha})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.stroke();
+                    }
+                }
+            });
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+    }
 });
