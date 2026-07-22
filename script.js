@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* --- Typing Effect --- */
-    const roles = ["Front-End Developer", "Tech Enthusiast", "Public Speaker", "Problem Solver"];
+    const roles = ["Frontend Developer", "Web Developer", "BCA Student", "AI + Web Developer"];
     const typingText = document.getElementById("typing-text");
     let roleIndex = 0;
     let charIndex = 0;
