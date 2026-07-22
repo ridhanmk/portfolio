@@ -706,7 +706,7 @@ footer {
 /* Scroll Animation Hero Styles */
 .scroll-hero-section {
     position: relative;
-    height: 350vh; /* Scrollable height for animation */
+    height: 550vh; /* Scrollable height for animation */
     background-color: var(--bg-color);
 }
 
