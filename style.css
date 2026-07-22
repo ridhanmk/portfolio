@@ -361,6 +361,7 @@ section {
 /* Skills Section */
 .skills-section {
     position: relative;
+    padding-top: 0;
 }
 
 .skills-grid {
@@ -656,7 +657,7 @@ footer {
 /* Scroll Animation Hero Styles */
 .scroll-hero-section {
     position: relative;
-    height: 500vh; /* Scrollable height for animation */
+    height: 350vh; /* Scrollable height for animation */
     background-color: var(--bg-color);
 }
 
