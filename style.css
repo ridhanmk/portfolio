@@ -475,7 +475,7 @@ section::after {
 /* Projects Section */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: 1fr;
     gap: 3rem;
 }
 
@@ -1157,8 +1157,23 @@ footer {
     transform: scale(1.05);
 }
 
-/* Project Grid Balancing layouts (spans 2 columns on desktop) */
-@media (min-width: 901px) {
+/* Project Grid Balancing layouts (spans 2 columns on tablets and desktops) */
+@media (min-width: 651px) and (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+    
+    .project-card.featured {
+        grid-column: span 2;
+    }
+    
+    .project-card.featured .project-img {
+        height: 290px;
+    }
+}
+
+@media (min-width: 1025px) {
     .projects-grid {
         grid-template-columns: repeat(3, 1fr);
     }
